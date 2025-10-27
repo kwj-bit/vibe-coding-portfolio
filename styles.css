@@ -20,7 +20,7 @@ body {
 
 /* Header Styles */
 .header {
-    padding: 20px 0;
+    padding: 15px 0;
     background-color: #fff;
     position: fixed;
     top: 0;
@@ -28,6 +28,7 @@ body {
     right: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 70px; /* 헤더 높이 고정 */
 }
 
 .header .container {
@@ -96,10 +97,11 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 120px 0 80px;
-    min-height: 100vh;
+    padding: 80px 0 60px;
+    min-height: calc(100vh - 70px);
     display: flex;
     align-items: center;
+    margin-top: 70px; /* 헤더 높이와 동일하게 고정 */
 }
 
 .hero-content {
@@ -456,21 +458,27 @@ body {
         padding: 0 15px;
     }
 
+    .header {
+        height: 70px; /* 모든 화면에서 동일한 높이 유지 */
+    }
+
     .header .container {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row; /* 모바일에서도 가로 배치 유지 */
+        gap: 15px;
+        justify-content: space-between; /* 로고와 메뉴 버튼을 양 끝에 배치 */
     }
 
     .nav-list {
-        gap: 20px;
+        gap: 15px; /* 모바일에서 간격 줄임 */
     }
 
     .nav-list a {
-        font-size: 12px;
+        font-size: 11px; /* 모바일에서 폰트 크기 줄임 */
     }
 
     .hero {
-        padding: 100px 0 60px;
+        padding: 60px 0 40px;
+        margin-top: 70px; /* 모든 화면에서 동일한 여백 유지 */
     }
 
     .hero-content {

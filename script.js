@@ -253,17 +253,29 @@ function createMobileMenu() {
     const header = document.querySelector('.header');
     const nav = document.querySelector('.nav');
     
+    // Remove existing menu button if it exists
+    const existingButton = header.querySelector('.mobile-menu-btn');
+    if (existingButton) {
+        existingButton.remove();
+    }
+    
     if (window.innerWidth <= 768) {
         // Create mobile menu button
         const menuButton = document.createElement('button');
+        menuButton.className = 'mobile-menu-btn';
         menuButton.innerHTML = '☰';
         menuButton.style.cssText = `
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
             color: #333;
             display: block;
+            padding: 5px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
         `;
         
         // Add toggle functionality
@@ -271,43 +283,44 @@ function createMobileMenu() {
             nav.classList.toggle('mobile-open');
         });
         
-        // Add mobile styles
-        const mobileStyles = document.createElement('style');
-        mobileStyles.textContent = `
-            @media (max-width: 768px) {
-                .nav {
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    right: 0;
-                    background: white;
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                    transform: translateY(-100%);
-                    opacity: 0;
-                    transition: all 0.3s ease;
-                }
-                
-                .nav.mobile-open {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-                
-                .nav-list {
-                    flex-direction: column;
-                    padding: 20px;
-                    gap: 15px;
-                }
-                
-                .nav-list a {
-                    font-size: 16px;
-                }
-            }
-        `;
-        document.head.appendChild(mobileStyles);
-        
         header.appendChild(menuButton);
     }
 }
+
+// Add mobile styles only once
+const mobileStyles = document.createElement('style');
+mobileStyles.textContent = `
+    @media (max-width: 768px) {
+        .nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .nav.mobile-open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .nav-list {
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
+        }
+        
+        .nav-list a {
+            font-size: 16px;
+        }
+    }
+`;
+document.head.appendChild(mobileStyles);
 
 // Initialize mobile menu
 window.addEventListener('resize', createMobileMenu);
