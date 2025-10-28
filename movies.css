@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    color: #e5e5e5;
+}
+
+.mv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.mv-header {
+    position: sticky;
+    top: 0;
+    background: rgba(10,10,10,0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    z-index: 10;
+}
+
+.mv-logo {
+    display: inline-block;
+    padding: 14px 0;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.mv-main {
+    padding: 28px 0 60px;
+}
+
+.mv-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.mv-card {
+    background: #181818;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mv-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.5);
+}
+
+.mv-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    display: block;
+    background: #222;
+}
+
+.mv-title-text {
+    padding: 10px 10px 12px;
+    font-size: 14px;
+    color: #e5e5e5;
+}
+
+.mv-date {
+    padding: 0 10px 12px;
+    font-size: 12px;
+    color: #9aa0a6;
+}
+
+.mv-footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 16px 0;
+    color: #9aa0a6;
+}
+
+@media (max-width: 768px) {
+    .mv-main { padding: 18px 0 40px; }
+    .mv-title { font-size: 18px; margin-bottom: 12px; }
+}
