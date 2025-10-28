@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>할일 앱</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1 class="app__title">할일 앱</h1>
+      </header>
+
+      <section class="todo">
+        <form id="todo-form" class="todo__form" autocomplete="off">
+          <label for="todo-input" class="sr-only">할일 입력</label>
+          <input id="todo-input" class="todo__input" type="text" placeholder="할일을 입력하세요" maxlength="200" />
+          <button id="add-btn" class="btn btn--primary" type="submit" aria-label="할일 추가">추가</button>
+        </form>
+        <div class="todo__toolbar" role="toolbar" aria-label="필터 및 일괄 작업">
+          <div class="toolbar__filters" id="filters" role="tablist" aria-label="필터">
+            <button class="btn btn--subtle filter-btn is-active" data-filter="all" role="tab" aria-selected="true">전체</button>
+            <button class="btn btn--subtle filter-btn" data-filter="active" role="tab" aria-selected="false">미완료</button>
+            <button class="btn btn--subtle filter-btn" data-filter="completed" role="tab" aria-selected="false">완료</button>
+          </div>
+          <div class="toolbar__meta">
+            <span id="left-count" class="toolbar__count">0개 남음</span>
+            <div class="toolbar__bulk">
+              <button id="clear-completed" class="btn" type="button">완료 비우기</button>
+              <button id="clear-all" class="btn btn--danger" type="button">전체 삭제</button>
+            </div>
+          </div>
+        </div>
+
+        <ul id="todo-list" class="todo__list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+  </html>
+
+
