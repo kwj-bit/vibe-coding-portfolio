@@ -7,7 +7,20 @@
     { "src": "404.html", "use": "@vercel/static" }
   ],
   "routes": [
+    { "src": "/style.css", "dest": "/style.css" },
+    { "src": "/script.js", "dest": "/script.js" },
     { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/style.css",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/css"
+        }
+      ]
+    }
   ]
 }
 
