@@ -1,13 +1,24 @@
 /* Reset */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; color: #111; background: #f7f7fb; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; 
+  color: #111; 
+  background: #f7f7fb !important; 
+  line-height: 1.6;
+}
 
 .app { max-width: 720px; margin: 40px auto; padding: 0 16px; }
 .app__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
 .app__title { font-size: 24px; margin: 0; }
 
-.todo { background: #fff; border: 1px solid #e7e7ef; border-radius: 12px; padding: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+.todo { 
+  background: #fff !important; 
+  border: 1px solid #e7e7ef; 
+  border-radius: 12px; 
+  padding: 16px; 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04); 
+}
 .todo__form { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-bottom: 12px; }
 .todo__input { padding: 12px 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px; transition: border-color .15s ease; }
 .todo__input:focus { outline: none; border-color: #6b7cff; box-shadow: 0 0 0 3px rgba(107,124,255,.15); }
